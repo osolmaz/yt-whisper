@@ -1,0 +1,20 @@
+[project]
+name = "yt-whisper"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai-whisper>=20240930",
+    "yt-dlp>=2024.10.22",
+]
+
+[tool.setuptools]
+py-modules = ["yt_whisper"]
+
+[project.scripts]
+yt_whisper = "yt_whisper.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
