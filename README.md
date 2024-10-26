@@ -4,9 +4,9 @@ This repository uses `yt-dlp` and [OpenAI's Whisper](https://openai.com/blog/whi
 
 ## Installation
 
-To get started, you'll need Python 3.7 or newer. Install the binary by running the following command:
+Install with `uv`:
 
-    pip install git+https://github.com/m1guelpf/yt-whisper.git
+    uv sync
 
 You'll also need to install [`ffmpeg`](https://ffmpeg.org/), which is available from most package managers:
 
@@ -25,19 +25,19 @@ choco install ffmpeg
 
 The following command will generate a VTT file from the specified YouTube video
 
-    yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    uv run yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 The default setting (which selects the `small` model) works well for transcribing English. You can optionally use a bigger model for better results (especially with other languages). The available models are `tiny`, `tiny.en`, `base`, `base.en`, `small`, `small.en`, `medium`, `medium.en`, `large`.
 
-    yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --model medium
+    uv run yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --model medium
 
 Adding `--task translate` will translate the subtitles into English:
 
-    yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --task translate
+    uv run yt_whisper "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --task translate
 
 Run the following to view all available options:
 
-    yt_whisper --help
+    uv run yt_whisper --help
 
 ## License
 
